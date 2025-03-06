@@ -22,21 +22,35 @@ function randomNumber() {
 
 //Funzione timer
 
-let countDown = 3;
+let countDown = 0;
 
-function countDownTime() {
+/* function countDownTime() {
 
-    console.log(countDown);
-    countDown--;
+console.log(countDown);
+countDown--;
 
-    if (countDown == 0) {
-        clearInterval(count);
-    }
-
-    return countDown;
+if (countDown == 0) {
+    clearInterval(count);
 }
 
+return countDown;
+}
+
+
 const count = setInterval(countDownTime, 1_000);
+*/
 
 // Aggiungere a schermo i numeri random
+
+function numberInScreen() {
+    const numberLi = randomNumber();
+
+    for (let i = 0; i < 5; i++) {
+        const liElement = document.createElement('li');
+        liElement.append(numberLi[i]);
+        numbersListElement.appendChild(liElement);
+        console.log(liElement);
+    }
+
+}
 
