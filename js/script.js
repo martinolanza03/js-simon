@@ -60,3 +60,18 @@ function numberInScreen() {
 }
 
 numberInScreen();
+
+//Submit form
+
+const inputElement = document.querySelectorAll(".form-control");
+let userArrayNumber = [];
+console.log(inputElement.value);
+
+formElement.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    for (let i = 0; i < inputElement.length; i++) {
+        userArrayNumber.push(inputElement[i].value)
+    }
+    console.log(userArrayNumber);
+});
