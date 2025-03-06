@@ -13,7 +13,7 @@ function randomNumber() {
 
     const numberArray = [];
 
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i < 5; i++) {
         numberArray.push(Math.floor((Math.random() * 50) + 1));
     }
 
@@ -22,23 +22,28 @@ function randomNumber() {
 
 //Funzione timer
 
-let countDown = 0;
+let countDown = 3;
 
-/* function countDownTime() {
+function countDownTime() {
 
-console.log(countDown);
-countDown--;
+    let spanElement = document.createElement('span');
+    spanElement.append(countDown);
+    countDownElement.innerHTML = "";
+    countDownElement.appendChild(spanElement);
 
-if (countDown == 0) {
-    clearInterval(count);
+    console.log(countDown);
+    if (countDown == 0) {
+        clearInterval(count);
+        formElement.classList.remove('d-none');
+        numbersListElement.classList.add('d-none');
+    }
+
+    countDown--;
+
+    return countDown;
 }
-
-return countDown;
-}
-
 
 const count = setInterval(countDownTime, 1_000);
-*/
 
 // Aggiungere a schermo i numeri random
 
@@ -54,3 +59,4 @@ function numberInScreen() {
 
 }
 
+numberInScreen();
