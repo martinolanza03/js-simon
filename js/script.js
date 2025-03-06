@@ -8,6 +8,7 @@ console.log(formElement);
 
 
 // Funzione numeri random
+
 function randomNumber() {
 
     const numberArray = [];
@@ -18,3 +19,19 @@ function randomNumber() {
 
     return numberArray;
 }
+
+//Funzione timer
+
+let countDown = 3;
+
+function countDownTime() {
+
+    console.log(countDown);
+    countDown--;
+
+    if (countDown == 0) {
+        clearInterval(count);
+    }
+}
+
+const count = setInterval(countDownTime, 1_000);
