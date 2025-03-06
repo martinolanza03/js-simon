@@ -22,7 +22,7 @@ function randomNumber() {
 
 //Funzione timer
 
-let countDown = 0;
+let countDown = 30;
 
 function countDownTime() {
 
@@ -69,6 +69,8 @@ const inputElement = document.querySelectorAll(".form-control");
 let userArrayNumber = [];
 console.log(inputElement.value);
 let numbersEqual = [];
+const pElementWrong = document.getElementById('message');
+const pElement = document.getElementById('message-nice');
 
 formElement.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -83,6 +85,16 @@ formElement.addEventListener('submit', function (event) {
             numbersEqual.push(numberLi[i]);
         }
     }
+
+    const numberCheck = numbersEqual.join(' , ');
+    if (numbersEqual.length == 0) {
+        pElementWrong.innerText = `Hai indovinato ${numbersEqual.length} numeri! (${numberCheck})`;
+    } else if (numbersEqual.length == 1) {
+        pElement.innerText = `Hai indovinato ${numbersEqual.length} numero! (${numberCheck})`;
+    } else if (numbersEqual.length > 1) {
+        pElement.innerText = `Hai indovinato ${numbersEqual.length} numeri! (${numberCheck})`;
+    }
+
     console.log(numbersEqual);
 });
 
