@@ -32,6 +32,11 @@ function countDownTime() {
     if (countDown == 0) {
         clearInterval(count);
     }
+
+    return countDown;
 }
 
 const count = setInterval(countDownTime, 1_000);
+
+// Aggiungere a schermo i numeri random
+
