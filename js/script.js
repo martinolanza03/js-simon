@@ -22,7 +22,7 @@ function randomNumber() {
 
 //Funzione timer
 
-let countDown = 3;
+let countDown = 0;
 
 function countDownTime() {
 
@@ -46,9 +46,9 @@ function countDownTime() {
 const count = setInterval(countDownTime, 1_000);
 
 // Aggiungere a schermo i numeri random
+const numberLi = randomNumber();
 
 function numberInScreen() {
-    const numberLi = randomNumber();
 
     for (let i = 0; i < 5; i++) {
         const liElement = document.createElement('li');
@@ -56,6 +56,8 @@ function numberInScreen() {
         numbersListElement.appendChild(liElement);
         console.log(liElement);
     }
+
+    return numberLi;
 
 }
 
@@ -66,6 +68,7 @@ numberInScreen();
 const inputElement = document.querySelectorAll(".form-control");
 let userArrayNumber = [];
 console.log(inputElement.value);
+let numbersEqual = [];
 
 formElement.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -73,5 +76,14 @@ formElement.addEventListener('submit', function (event) {
     for (let i = 0; i < inputElement.length; i++) {
         userArrayNumber.push(inputElement[i].value)
     }
-    console.log(userArrayNumber);
+
+    // Controllo dei valori
+    for (let i = 0; i < numberLi.length; i++) {
+        if (userArrayNumber[i].includes(numberLi[i])) {
+            numbersEqual.push(numberLi[i]);
+        }
+    }
+    console.log(numbersEqual);
 });
+
+
